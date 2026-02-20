@@ -1,0 +1,5 @@
+C:\Users\AdelRose\source\repos\SecretsApp.Api\Secrets.Application\obj\Debug\net9.0\Movie.Application.csproj.AssemblyReference.cache
+C:\Users\AdelRose\source\repos\SecretsApp.Api\Secrets.Application\obj\Debug\net9.0\Movie.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AdelRose\source\repos\SecretsApp.Api\Secrets.Application\obj\Debug\net9.0\Movie.Application.AssemblyInfoInputs.cache
+C:\Users\AdelRose\source\repos\SecretsApp.Api\Secrets.Application\obj\Debug\net9.0\Movie.Application.AssemblyInfo.cs
+C:\Users\AdelRose\source\repos\SecretsApp.Api\Secrets.Application\obj\Debug\net9.0\Movie.Application.csproj.CoreCompileInputs.cache

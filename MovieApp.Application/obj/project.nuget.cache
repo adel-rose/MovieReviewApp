@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "nGfQzhWZ/AM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\adelr\\Desktop\\MoviesApp\\MovieApp.Application\\MovieApp.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\adelr\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
+    "C:\\Users\\adelr\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.0.0\\fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
+    "C:\\Users\\adelr\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.4\\microsoft.extensions.dependencyinjection.abstractions.9.0.4.nupkg.sha512",
+    "C:\\Users\\adelr\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.4\\microsoft.extensions.logging.abstractions.9.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

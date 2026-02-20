@@ -1,0 +1,29 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: movieappdatabase
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Spartan117!"
+    ports:
+      - "1433:1433"
+    networks:
+      - mynet
+
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: movieapp
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=MyDb;User Id=sa;Password=Spartan117!;TrustServerCertificate=True;Encrypt=False"
+    depends_on:
+      - sqlserver
+    ports:
+      - "5000:8080"
+    networks:
+      - mynet
+
+networks:
+  mynet:
