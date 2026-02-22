@@ -35,7 +35,7 @@ namespace MovieApp.Application.Services
 
             var genreDTOs = genres.Select(genre => new GenreReadDTO() { 
                 Id = genre.Id,
-                Genre = genre.Name
+                Name = genre.Name
             });
 
             return genreDTOs;
@@ -47,7 +47,7 @@ namespace MovieApp.Application.Services
 
             return new GenreReadDTO() { 
                 Id = genre.Id,
-                Genre = genre.Name
+                Name = genre.Name
             };
         }
     }

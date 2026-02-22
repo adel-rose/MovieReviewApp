@@ -1,0 +1,18 @@
+@model IEnumerable<Movie>
+
+@{
+    ViewData["Title"] = "Movies";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Movies</h1>
+</div>
+
+<div class="row">
+    @foreach (var item in @Model)
+    {
+        <div class="col-2">
+            @await Html.PartialAsync("_Movie", item)
+        </div>
+    }
+</div>

@@ -10,7 +10,7 @@ namespace MovieApp.Application.Extensions
             IEnumerable<GenreReadDTO> dtos = genres.Select(genre => new GenreReadDTO()
             {
                 Id = genre.Id,
-                Genre = genre.Name
+                Name = genre.Name
             });
 
             return dtos;

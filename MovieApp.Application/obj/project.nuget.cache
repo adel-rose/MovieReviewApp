@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "nGfQzhWZ/AM=",
+  "dgSpecHash": "sL5Nkta+JsE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\adelr\\Desktop\\MoviesApp\\MovieApp.Application\\MovieApp.Application.csproj",
+  "projectFilePath": "/Users/adelrose/source/MovieReviewApp/MovieApp.Application/MovieApp.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\adelr\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
-    "C:\\Users\\adelr\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.0.0\\fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
-    "C:\\Users\\adelr\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.4\\microsoft.extensions.dependencyinjection.abstractions.9.0.4.nupkg.sha512",
-    "C:\\Users\\adelr\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.4\\microsoft.extensions.logging.abstractions.9.0.4.nupkg.sha512"
+    "/Users/adelrose/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
+    "/Users/adelrose/.nuget/packages/fluentvalidation.dependencyinjectionextensions/12.0.0/fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
+    "/Users/adelrose/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.4/microsoft.extensions.dependencyinjection.abstractions.9.0.4.nupkg.sha512",
+    "/Users/adelrose/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.4/microsoft.extensions.logging.abstractions.9.0.4.nupkg.sha512"
   ],
   "logs": []
 }

@@ -19,7 +19,7 @@ builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration)
 );
 
-var conString = builder.Configuration.GetConnectionString("DefaultConnection");
+var conString = builder.Configuration.GetConnectionString("ContainerConnection");
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
@@ -46,36 +46,41 @@ var app = builder.Build();
 // -----------------------
 // 1?? Run migrations first
 // -----------------------
-using (var scope = app.Services.CreateScope())
+
+if (!app.Environment.IsDevelopment())
 {
-    var db = scope.ServiceProvider.GetRequiredService<DataContext>();
-
-    var retries = 20; // ? increase
-    while (true)
+    using (var scope = app.Services.CreateScope())
     {
-        try
-        {
-            db.Database.Migrate();
-            Console.WriteLine("Database migrated successfully.");
-            break;
-        }
-        catch (SqlException ex)
-        {
-            retries--;
+        var db = scope.ServiceProvider.GetRequiredService<DataContext>();
 
-            if (retries == 0)
+        var retries = 20; // ? increase
+        while (true)
+        {
+            try
             {
-                throw new Exception(
-                    "Could not connect to SQL Server after multiple retries.",
-                    ex
-                );
+                db.Database.Migrate();
+                Console.WriteLine("Database migrated successfully.");
+                break;
             }
+            catch (SqlException ex)
+            {
+                retries--;
 
-            Console.WriteLine("SQL Server not ready yet, retrying in 5s...");
-            Thread.Sleep(5000);
+                if (retries == 0)
+                {
+                    throw new Exception(
+                        "Could not connect to SQL Server after multiple retries.",
+                        ex
+                    );
+                }
+
+                Console.WriteLine("SQL Server not ready yet, retrying in 5s...");
+                Thread.Sleep(5000);
+            }
         }
     }
 }
+
 
 
 app.UseHttpsRedirection();
