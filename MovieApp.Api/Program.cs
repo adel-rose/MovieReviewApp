@@ -41,7 +41,22 @@ builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddTransient<IDiscountable, PlantinumPackage>();
 builder.Services.AddTransient<IDiscountable, GoldPackage>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:5110")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
+
 var app = builder.Build();
+
+
+
+
 
 // -----------------------
 // 1?? Run migrations first
@@ -81,14 +96,9 @@ if (!app.Environment.IsDevelopment())
     }
 }
 
-
-
+app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
-
 app.UseAuthentication();
-
-app.MapControllers();
-
 app.UseAuthorization();
-
+app.MapControllers();
 app.Run();

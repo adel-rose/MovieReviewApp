@@ -1,0 +1,18 @@
+@model MovieApp.Web.Models.Genre
+
+<form id="createForm">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" id="Name" />
+    </div>
+
+    <button type="button" onclick="submitForm()">Create</button>
+</form>
+
+<div id="errorSection">
+    
+</div>
+
+@section Scripts {
+    <script src="~/scripts/Genre/CreateGenre.js"></script>
+}

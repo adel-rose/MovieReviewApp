@@ -1,0 +1,18 @@
+@model IEnumerable<Genre>
+
+@{
+    ViewData["Title"] = "Genres";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Genres</h1>
+</div>
+
+<div class="d-flex flex-wrap">
+    @foreach (var item in @Model)
+    {
+        <div class="col-2">
+            @item.Name
+        </div>
+    }
+</div>

@@ -8,8 +8,8 @@
     <h1 class="display-4">Movies</h1>
 </div>
 
-<div class="row">
-    @foreach (var item in @Model)
+<div class="d-flex flex-wrap">
+    @foreach (var item in Model)
     {
         <div class="col-2">
             @await Html.PartialAsync("_Movie", item)

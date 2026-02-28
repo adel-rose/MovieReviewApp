@@ -28,11 +28,12 @@ public class MoviesController : Controller
     public async Task<IActionResult> Create(Movie movie)
     {
         var baseUrl = "http://localhost:5180/api";
-        var endpoint = "create";
+        var createEndpoint = "create";
+        var getEndpoint = "movies";
 
-        await _httpClientService.PostAsync<ObjectResult>(baseUrl, endpoint, movie);
+        await _httpClientService.PostAsync<ObjectResult>(baseUrl, createEndpoint, movie);
 
-        var movies = await _httpClientService.GetAsync<List<Movie>>(baseUrl, endpoint);
+        var movies = await _httpClientService.GetAsync<List<Movie>>(baseUrl, getEndpoint);
         
         return View("listAllMovies", movies);
     }

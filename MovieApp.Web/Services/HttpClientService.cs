@@ -10,13 +10,13 @@ public class HttpClientService : IHttpClientService
     public async Task<T?> GetAsync<T>(string baseUrl, string endpoint)
     {
         var response = await _sharedClient.GetAsync($"{baseUrl}/{endpoint}");
-        response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<T>();
     }
 
-    public Task<T?> PostAsync<T>(string baseUrl, string endpoint, object body)
+    public async Task<T?> PostAsync<T>(string baseUrl, string endpoint, object body)
     {
-        throw new NotImplementedException();
+        var response = await _sharedClient.PostAsJsonAsync($"{baseUrl}/{endpoint}", body);
+        return await response.Content.ReadFromJsonAsync<T>();
     }
 
     public Task<T?> PutAsync<T>(string baseUrl, string endpoint, object body)
