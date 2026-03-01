@@ -34,7 +34,8 @@ namespace MovieApp.Application.Services
                 YearOfRelease = movie.YearOfRelease,
                 Price = movie.Price,
                 DiscountedPrice = movie.DiscountedPrice,
-                Genres = genresForNewMovie
+                Genres = genresForNewMovie,
+                ImageUrl = movie.ImageUrl
             };
 
             // Persist a movie
@@ -51,7 +52,8 @@ namespace MovieApp.Application.Services
                 Title = movie.Title,
                 YearOfRelease = movie.YearOfRelease,
                 Price= movie.Price,
-                Genres = movie.Genres.MapToGenreRead()
+                Genres = movie.Genres.MapToGenreRead(),
+                ImageUrl = movie.ImageUrl
             });
         }
 

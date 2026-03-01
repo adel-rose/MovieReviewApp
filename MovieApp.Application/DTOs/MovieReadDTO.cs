@@ -8,5 +8,6 @@
         public decimal Price { get; set; }
         public decimal? DiscountedPrice { get; set; }
         public IEnumerable<GenreReadDTO>? Genres { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

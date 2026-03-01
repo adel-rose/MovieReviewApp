@@ -11,6 +11,7 @@ namespace MovieApp.Domain.Models
         public decimal Price { get; set; }
         public decimal? DiscountedPrice { get; set; }
         public virtual IEnumerable<Genre> Genres { get; set; }
+        public string ImageUrl { get; set; }
 
     }
 }
