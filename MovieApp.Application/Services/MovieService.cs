@@ -94,11 +94,15 @@ namespace MovieApp.Application.Services
             };
         }
 
-        public async Task<IEnumerable<MovieReadDTO>> GetMovieAsync(string filter, CancellationToken cancellationToken)
+        public async Task<IEnumerable<MovieReadDTO>> GetMoviesAsync(string filter, CancellationToken cancellationToken)
         {
             try
             {
-                var filteredMovies = await _movieRepository.FindByConditionAsync(movie => movie.Title.ToLower().Contains(filter.ToLower()), cancellationToken);
+                // Server side filtration for unit test purposes
+                // var filteredMovies = await _movieRepository.FindByConditionAsync(movie => movie.Title.ToLower().Contains(filter.ToLower()), cancellationToken);
+                var allMovies = await _movieRepository.FindAllAsync(cancellationToken);
+                
+                var filteredMovies = allMovies.Where(movie => movie.Title.ToLower().Contains(filter.ToLower()));
 
                 var filteredMoviesDTOs = filteredMovies.MapToMovieRead();
 

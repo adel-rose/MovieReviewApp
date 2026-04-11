@@ -1,0 +1,14 @@
+# Build output folders — Docker regenerates these, never copy them in
+**/bin/
+**/obj/
+# Visual Studio files
+.vs/
+*.user
+# Secrets and environment files — never bake these into an image
+.env
+.env.*
+appsettings.Development.json
+# Git and docs
+.git/
+.gitignore
+**/*.md

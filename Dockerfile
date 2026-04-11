@@ -34,3 +34,5 @@ ENTRYPOINT ["dotnet", "MovieApp.Api.dll"]
 
 # docker buildx build --load -t movieapp:latest . (Use this command to run the container)
 # docker run -d -p 5000:5000 --name movieapp-container movieapp:latest
+
+

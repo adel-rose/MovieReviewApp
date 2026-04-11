@@ -7,7 +7,7 @@ namespace MovieApp.Application.Interfaces
     {
         Task<IEnumerable<MovieReadDTO>> GetMovies(CancellationToken cancellationToken = default);
         Task<MovieReadDTO> GetMovieAsync(Guid movieId, string userPackage, CancellationToken cancellationToken = default);
-        Task<IEnumerable<MovieReadDTO>> GetMovieAsync(string filter, CancellationToken cancellationToken = default);
+        Task<IEnumerable<MovieReadDTO>> GetMoviesAsync(string filter, CancellationToken cancellationToken = default);
         Task<bool> CreateMovieAsync(MovieCreateDTO movie);
     }
 }

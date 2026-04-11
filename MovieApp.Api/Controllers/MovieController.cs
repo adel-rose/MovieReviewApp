@@ -55,16 +55,16 @@ namespace MovieApp.Api.Controllers
             return Ok(movie);
         }
 
-        [HttpGet("/filter/{movieId}")]
-        public async Task<ActionResult<MovieReadDTO>> GetMovieFiltered([FromRoute] Guid movieId, [FromQuery] string filter)
+        [HttpGet("filter")]
+        public async Task<ActionResult<MovieReadDTO>> GetMovieFiltered([FromQuery] string title)
         {
             try
             {
-                var result = await _movieService.GetMovieAsync(filter);
+                var result = await _movieService.GetMoviesAsync(title);
 
                 if(result.IsNullOrEmpty())
                 {
-                    var message = $"No movies corresponding to {filter} were found.";
+                    var message = $"No movies corresponding to {title} were found.";
                     throw new NullReferenceException(message);
                 }
 
