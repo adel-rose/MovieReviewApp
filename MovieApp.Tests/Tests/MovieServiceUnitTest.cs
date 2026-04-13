@@ -10,11 +10,11 @@ using Serilog;
 
 namespace MovieApp.Tests.Tests
 {
-    public class MovieServiceTest : IClassFixture<MovieServiceFixture>
+    public class MovieServiceUnitTest : IClassFixture<MovieServiceFixture>
     {
         private readonly MovieServiceFixture _movieServiceFixture;
 
-        public MovieServiceTest(MovieServiceFixture movieServiceFixture)
+        public MovieServiceUnitTest(MovieServiceFixture movieServiceFixture)
         {
             _movieServiceFixture = movieServiceFixture;
         }

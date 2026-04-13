@@ -7,14 +7,14 @@ using System.Threading;
 
 namespace MovieApp.Application.Services
 {
-    public class MovieService : IMovieService
+    public class MovieServiceUnit : IMovieService
     {
         private readonly IMovieRespository _movieRepository;
         private readonly IMovieRepositoryContrib _movieRepositoryContrib;
         private readonly IGenreRepository _genreRepository;
         private readonly IEnumerable<IDiscountable> _packages;
         private readonly ILogger<string> _logger;
-        public MovieService(IMovieRespository movieRepository, IMovieRepositoryContrib movieRepositoryContrib, IGenreRepository genreRepository, IEnumerable<IDiscountable> packages, ILogger<string> logger)
+        public MovieServiceUnit(IMovieRespository movieRepository, IMovieRepositoryContrib movieRepositoryContrib, IGenreRepository genreRepository, IEnumerable<IDiscountable> packages, ILogger<string> logger)
         {
             _movieRepository = movieRepository;
             _movieRepositoryContrib = movieRepositoryContrib;

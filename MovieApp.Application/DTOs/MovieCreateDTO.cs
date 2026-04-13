@@ -1,4 +1,6 @@
-﻿namespace MovieApp.Domain.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MovieApp.Domain.DTOs
 {
     public class MovieCreateDTO
     {

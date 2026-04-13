@@ -18,7 +18,7 @@ namespace MovieApp.Tests.Fixtures.MovieFixture
     /// </summary>
     public class MovieServiceFixture
     {
-        public MovieService Sut { get; private set; }
+        public MovieServiceUnit Sut { get; private set; }
         private Mock<IMovieRespository> EfMovieRepoMocked{ get; set; }
         private Mock<IMovieRepositoryContrib> ContribRepoMocked { get; set; }
         private Mock<IGenreRepository> EfGenreRepoMocked { get; set; }
@@ -41,7 +41,7 @@ namespace MovieApp.Tests.Fixtures.MovieFixture
             
             RegisterMocks();
             
-            Sut = new MovieService(EfMovieRepoMocked.Object,
+            Sut = new MovieServiceUnit(EfMovieRepoMocked.Object,
                 ContribRepoMocked.Object, EfGenreRepoMocked.Object,
                 DiscountServicesMocked.Select(x => x.Object), LoggerMocked);
         }

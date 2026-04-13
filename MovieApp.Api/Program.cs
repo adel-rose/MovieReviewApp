@@ -1,7 +1,10 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MovieApp.Application.Interfaces;
 using MovieApp.Application.Services;
+using MovieApp.Application.Validators;
 using MovieApp.Infrastructure.Data;
 using MovieApp.Infrastructure.Repositories;
 using NHibernate;
@@ -29,13 +32,14 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 });
 
-
+builder.Services.AddValidatorsFromAssemblyContaining<MovieCreateDTOValidator>();
+builder.Services.AddFluentValidationAutoValidation();
 
 builder.Services.AddScoped<IDapperDbConnection, DapperDbConnection>();
 builder.Services.AddScoped<IMovieRespository, MovieRepositoryEF>();
 builder.Services.AddScoped<IMovieRepositoryContrib, MovieRepositoryContrib>();
 builder.Services.AddScoped<IMovieRepositoryDapper, MovieRepository>();
-builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<IMovieService, MovieServiceUnit>();
 builder.Services.AddScoped<IGenreRepository, GenreRepositoryEF>();
 builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddTransient<IDiscountable, PlantinumPackage>();
@@ -102,3 +106,4 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+public partial class Program { }

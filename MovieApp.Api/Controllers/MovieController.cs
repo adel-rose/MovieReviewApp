@@ -56,7 +56,7 @@ namespace MovieApp.Api.Controllers
         }
 
         [HttpGet("filter")]
-        public async Task<ActionResult<MovieReadDTO>> GetMovieFiltered([FromQuery] string title)
+        public async Task<IActionResult> GetMovieFiltered([FromQuery] string title)
         {
             try
             {
